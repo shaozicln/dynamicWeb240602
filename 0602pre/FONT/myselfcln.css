@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url(../Pictures/ccc-back.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover; /* 根据需要调整 */
+}
+#contanier {
+  display: grid;
+  grid-template-rows: 5em auto;
+  grid-template-columns: repeat(12, 1fr);
+  height: 90vh;
+  gap: 20px;
+}
+#navbar {
+  font: 500 60px "楷体";
+  border-radius: 15px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 1/13;
+  height: 15vh;
+  grid-row: 1;
+  background-color: rgba(116, 194, 74, 0);
+}
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+span {
+  color: rgb(28, 87, 56);
+}
+h1 {
+  font-size: x-large;
+  font-family: "加粗中文字体";
+}
+p {
+  font-size: x-large;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.head {
+  position: absolute;
+  width: 50%;
+  height: 75%;
+  top: 7.8em;
+  overflow: hidden;
+  border: 3px solid rgba(42, 79, 34, 0.459);
+  grid-column: 1/13;
+  grid-row: 2;
+  margin-left: 60px;
+  margin-right: 60px;
+  right:22%;
+}
+
+.happy-girl {
+  position: absolute;
+  border-radius: 500px;
+  width: 25%;
+  top: 25%;
+  right: 2em;
+  z-index: 1;
+  float: right;
+}
+
+.happy-girl:hover {
+  box-shadow: black 5px 5px 5px;
+  opacity: 0.8;
+}
+.main-card {
+  z-index: 0;
+  background-color: rgb(250, 235, 215);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 15em;
+  padding: 2em;
+  transform: skewY(4deg);
+}
+
+#head-backgroud {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+

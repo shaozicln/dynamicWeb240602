@@ -1,0 +1,118 @@
+#一、使用方法：
+##进入方式：signin.html文件登陆
+
+#二、功能简介：
+##1.⽂章系统：
+###⽂章的创建、编辑、删除、查询：EDIT.html。
+###⽂章分类的创建、编辑、删除、查询：EDIT.html。
+###⽂章评论的创建、编辑、删除、查询：article.html，仅会发布在当前文章下。
+###⽂章信息统计⽤户的博客数据，⽂章数量、浏览量：article.html 呈现在文章内容 右下角 评论区上方。
+##2.留言板系统：
+###留言发布、删除：仅可删除个人的留言
+###留言样式：用户本人为粉色文背景 内容头像靠右；
+            管理员 权限为“A” 为蓝色背景 内容头像靠左；
+            其他用户 权限为“B” 为绿色背景 内容头像靠左；
+##3.⽤户系统：
+###⽤户注册登录：sign.html登录 账户密码判断；
+                signup.html注册 注册新用户。
+###⽤户的编辑、删除、查询：UEDIT.html仅可编辑个人，但可查看其他用户信息。
+###修改⽤户头像、昵称以及密码等信息：UEDIT.html仅可编辑个人。
+###⽤户权限分级：
+                1.只有权限等级为“A”可以进行文章管理（增删改）功能，权限等级为“B”仅可查看
+                2.个人信息仅本人可以修改
+
+#三、awesomeProject1 api 功能介绍：
+##1..主页文章展示路由：
+        GET（"/categories-with-articles"）：利用数组嵌套将文章展示在不同分类下。
+##2..文章路由：
+        1.GET（"/search"）：主页文章搜索 支持文章ID搜索、文章标题模糊搜索和展示全部文章 依靠js跳转至动态显示的对应文章界面；
+        2.r.POST（"/articles"）：新建文章 依靠js传入文章分类、作者和文章内容 文章ID自动增加；
+        3.r.PUT（"/articles/:id"）：更新文章 依靠js传入文章ID、文章分类、作者和文章内容 更新文章内容；
+        4.r.DELETE（"/categories/:id"）：删除文章 依靠js传入文章ID 删除对应文章。
+##3..分类路由：
+        1.r.GET（"/categories"）：查询分类 支持分类ID查询、分类名称模糊查询和展示全部分类；
+        2.r.POST（"/categories"）：新建分类 依靠js传入分类名称和分类描述 分类ID自动增加；
+        3.r.PUT（"/categories/:id"）：更新分类 依靠js传入分类ID、分类名称和分类描述 更新分类；
+        q.DELETE（"/categories/:id"）：删除分类 依靠js传入分类ID 删除对应分类。
+##4..文章内容展示+评论路由:
+        1.r.GET（"/path-to-article/:id"）：显示对应ID文章页面 依靠js传入文章ID，显示文章标题、作者、作者发布文章数、文章内容、浏览量、文章类别、评论量、发布时间以及评论区；
+        2.r.POST（"/path-to-article/:id"）：发布评论；
+        3.r.DELETE（"/path-to-article/:id"）：删除个人评论；
+        4.r.GET（"/comments/:articleId"）：查询评论 支持用户名查询、评论内容模糊查询和展示全部评论。
+##5..用户路由:
+        1.r.GET（"/users"）：查询用户 支持用户名查询和展示全部用户，包含用户ID、用户名、用户权限、发布文章数和用户创建时间；
+        2.r.POST（"/users"）：注册新用户 依靠js传入用户名、密码、昵称、头像、权限等信息 注册成功有提示；
+        3.r.PUT（"/users/:id"）：更新用户信息 依靠js传入用户ID（不可更改）、用户名、密码、昵称、头像、权限（默认为B 不可更改）等 更新用户信息；
+        4.r.DELETE（"/users/:id"）：删除用户 依靠js传入用户ID（不可更改）删除对应用户；
+        5.r.GET（"/users/:id"）：依靠js将当前用户信息显示在页面上。
+##6..登陆验证路由：
+        r.POST（"/login"）：检验用户是否存在、账户密码是否对应。
+##7..留言板路由：
+        1.r.GET（"/commentBoard"）：显示所有留言；
+        2.r.POST（"/commentBoard"）：发布留言；
+        3.r.DELETE（"/commentBoard/:id"）：删除个人留言。
+
+#四、数据库 kh 构建：
+##1.articles：
+        主键：id
+        外键：category_id(categories-id) user_id(users-id)
+##2.categories：
+        主键：id
+        外键：无
+##3.comments：
+        主键：id
+        外键：article_id(articles-id) user_id(users-id)
+##4.messages：
+        主键：id
+        外键：user_id(users-id)
+##5.users：
+        主键：id
+        外键：无
+
+#五、各种 js 功能介绍
+##1.登陆注册：
+    signin.js 登录：
+        1.check()：
+            输入用户名和密码fetch（"http://127.0.0.1:8080/login"）传给后端，点击登录按钮 验证；
+        2.document.addEventListener("DOMContentLoaded", function ()) :
+            页面动画加载 通过滚动实现动画效果。
+        3.上传用户信息到控制台本地
+    signup.js 注册：
+        1.createUser()：
+            document.getElementById("").value;
+            fetch("http://127.0.0.1:8080/users")输入用户名、密码、昵称、头像、权限等信息；
+        2.document.addEventListener("DOMContentLoaded", function ())固定权限为“B”。
+##2.主页显示 主页.js：
+        1.浏览器伪iframe 
+        2.searchArticles() + searchArticleIds()搜索  fetch("http://127.0.0.1:8080/search?id=" + encodeURIComponent(searchValue))
+        3.displayResults(articles)：展示文章；innerHTML   localStorage.setItem("articleId", article.Id); window.location.href = a.href; 跳转到文章页面；
+        4.初始化展示分类 fetch("http://127.0.0.1:8080/categories-with-articles")
+        5.用户权限分级：B类无法点击EDIT按钮管理文章。
+##3.文章显示 article.js ：
+        1.控制台本地传入articleId userId
+        2.document.addEventListener("DOMContentLoaded", function () )初始化页面 数据传递displayArticle(data.data)
+        3.getCurrentTime(time) 时间格式确定
+        4.createArticleElement(article)：规定html模板 循环显示评论；
+        5.displayArticle(article)：接收数据 并将内容传给createArticleElement函数，监听按钮 attachCreateCommentListener()+attachDeleteButtonListener() 实现评论增加和删除功能；
+        6.function searchIdea()+function searchid()不同方式查询评论 fetch(`http://127.0.0.1:8080/comments/${articleId}?idea=` + encodeURIComponent(searchValue));
+        7.displayResults(comments)：展示评论；
+        8.attachCreateCommentListener()：监听按钮 点击后fetch(`http://127.0.0.1:8080/path-to-article/${articleId}`) 实现评论增加功能；
+        9.attachDeleteButtonListener()：监听按钮 点击后fetch(`http://127.0.0.1:8080/path-to-article/${commentId}`, {method: "DELETE"})commentId = this.getAttribute("data-comment-id"); 实现评论删除功能；
+##4.文章管理 EDIT.js ：
+        1.控制台本地获取articleid；
+        2.文章增删改：createArticle() deleteArticle() updateArticle()；
+        3.分类增删改查：createCategory() deleteCategory() updateCategory() getCategoryid() getCategoryName() displayResults(categories)；
+        4.文章初始化：权限判断
+##5.用户管理 UEDIT.js ：
+        1.控制台获取用户信息；
+        2.页面初始化 显示用户信息fetch(`http://127.0.0.1:8080/users/${userId}`) 规定模板：br(user) 显示：displaybr(users)
+        3.用户删改查：deleteUser() updateUser() getUser() displayResults(users)；
+        4.按钮美化。
+##6.留言板功能 writeComment.js ：
+        1.控制台本地获取userId；
+        2.页面初始化 显示留言板 fetch(`http://127.0.0.1:8080/commentBoard`) 规定模板： createMessages(message) 显示：displayMessages(messages)其中attachCreateCommentListener()+attachDeleteButtonListener()增加删除留言
+        3.留言发布：attachCreateCommentListener() fetch(`http://127.0.0.1:8080/commentBoard`)
+        4.留言删除：attachDeleteButtonListener() fetch(`http://127.0.0.1:8080/commentBoard/${messageId}`)
+    
+
+    //112233

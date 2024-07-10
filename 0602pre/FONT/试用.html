@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     * {
+
+margin: 0;
+
+padding: 0;
+
+font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+min-height: 100vh;
+
+background-color: #222;
+
+gap: 50px;
+
+flex-direction: column;
+
+}
+
+a {
+
+position: relative;
+
+padding:20px 60px;
+
+background-color: rgba(45,45,45,1);
+
+border-radius: 50px;
+
+color:#999;
+
+font-size:1.5em;
+
+text-decoration: none;
+
+overflow: hidden;
+
+transition: .5s;
+
+}
+
+a:hover {
+
+color: var(--clr);
+
+text-shadow: 0 0 15px var(--clr),
+
+             0 0 15px var(--clr);
+
+}
+
+a span{
+
+position: relative;
+
+z-index: 1;
+
+letter-spacing: .2em;
+
+}
+
+a::before{
+
+content: '';
+
+position: absolute;
+
+top:var(--y);
+
+left:var(--x);
+
+transform: translate(-50%,-50%);
+
+width: 200px;
+
+height: 200px;
+
+background: radial-gradient(var(--clr), transparent, transparent);
+
+opacity: 0;
+
+transition: .5s, top 0s, left 0s;
+
+}
+
+a:hover::before{
+
+opacity: 1;
+
+}
+
+a::after{
+
+content: '';
+
+position: absolute;
+
+background-color: rgba(45,45,45,.8);
+
+inset: 2px;
+
+border-radius: 48px;
+
+}
+</style>
+<body>
+    <a href="#" style="--clr:#0f0;"><span>BUTTON</span></a>
+
+<a href="#" style="--clr:#ff0;"><span>BUTTON</span></a>
+
+<a href="#" style="--clr:#f0f;"><span>BUTTON</span></a>
+</body>
+<script>
+     let btns = document.querySelectorAll('a');
+
+btns.forEach(btn => {
+
+    btn.onmousemove = (e) => {
+
+        let x = e.pageX - btn.offsetLeft;
+
+        let y = e.pageY - btn.offsetTop;
+
+
+
+        btn.style.setProperty('--x', `${x}px`);
+
+        btn.style.setProperty('--y', `${y}px`); 
+
+    }
+
+
+
+})
+
+/*怎么做跟随鼠标移动光源的文字*/
+//   const lightText = document.getElementById('light-text')
+// document.addEventListener('mousemove', (e) => {
+//   const x = e.clientX;
+//   const y = e.clientY;
+//   lightText.style.top = `${y}px`;
+//   lightText.style.left = `${x}px`;
+// });
+
+
+// const glowText = document.querySelector('.glowing-text');
+
+// glowText.addEventListener('mousemove', (e) => {
+//   const rect = glowText.getBoundingClientRect();
+//   const x = e.clientX - rect.left;
+//   const y = e.clientY - rect.top;
+//   const glow = glowText.querySelector(':after');
+
+//   // 设置光晕的位置
+//   glow.style.top = `${y}px`;
+//   glow.style.left = `${x}px`;
+
+//   // 显示光晕效果
+//   glow.style.opacity = 1;
+//   glow.style.width = '20px';
+//   glow.style.height = '20px';
+// });
+
+// glowText.addEventListener('mouseleave', () => {
+//   const glow = glowText.querySelector(':after');
+//   // 隐藏光晕效果
+//   glow.style.opacity = 0;
+//   glow.style.width = '0';
+//   glow.style.height = '0';
+// });
+</script>
+</html>

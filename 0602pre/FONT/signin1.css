@@ -1,0 +1,122 @@
+body {
+  backdrop-filter: blur(5px);
+  height: 200vh;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+nav{
+  background-color: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 20vh;
+}
+.background {
+  background-image: url(../Pictures/登录11.png);
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 200vh;
+  font: 900 12em '';
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  padding: 1.2em;
+  text-align: center;
+  overflow: hidden;
+}
+.background::before{
+  content: '';
+  background-size: cover;
+  background-image: inherit;
+  background-position: 50% 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -100;
+}
+#con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 160vh;
+  right: 27vw;
+}
+#con-signin {
+  box-shadow: black 5px 2px 15px;
+  border-radius: 20px;
+  display: flex;
+  width: 600px;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  flex-direction: column;
+  line-height: 9em;
+  transition: all 0.5s ease-in-out;
+}
+#con-signin:hover {
+  backdrop-filter: blur(5px);
+  width: 630px;
+  height: 650px;
+}
+input {
+  height: 100px;
+  width: 500px;
+  border-radius: 50px;
+  margin: 1em;
+  background: linear-gradient(
+    to right,
+    rgba(128, 111, 123, 0.589),
+    rgba(115, 142, 147, 0.526),
+    rgba(134, 140, 119, 0.589)
+  );
+  border: rgb(3, 121, 145) solid 1px;
+  font-size: 1.5rem;
+}
+#btn登录 {
+  height: 80px;
+  width: 200px;
+  margin: 25px;
+  border: #533434 solid 1px;
+  border-radius: 50px;
+  font-size: 2rem; /*rem相对于根目录字体大小*/
+  background-color: rgba(255, 192, 203, 0.63);
+}
+#btn注册 {
+  height: 80px;
+  width: 200px;
+  margin: 25px;
+  border-radius: 50px;
+  font-size: 2rem; /*rem相对于根目录字体大小*/
+  background-color: rgba(255, 192, 203, 0.63);
+}
+#btn登录:hover {
+  background: linear-gradient(
+    rgba(233, 170, 202, 0.882),
+    rgba(217, 198, 245, 0.701)
+  );
+  box-shadow: 0 0 10px rgba(1, 9, 1, 0.645);
+}
+#btn注册:hover {
+  background: linear-gradient(
+    rgba(255, 163, 163, 0.87),
+    rgba(196, 103, 112, 0.755)
+  );
+  box-shadow: 0 0 10px rgba(1, 9, 1, 0.645);
+}
+h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 80px;
+  margin-bottom: 30px;
+  color: rgb(84, 69, 85);
+  text-shadow: 0 0 10px rgb(88, 228, 246);
+}

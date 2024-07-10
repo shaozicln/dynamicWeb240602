@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>main-intor</title>
+  <link rel="stylesheet" href="./main-intro1.css" />
+</head>
+
+<body>
+
+
+
+  <div id="light-text">welcome</div>
+  <div id="main">
+    <div class="container">
+
+      <a class="item" href="./log.html">
+        <h1>开发日志</h1>
+      </a>
+
+      <a class="item" href="./myself.html"></a>
+
+      <a class="item" href="./myselfcln.html"></a>
+    </div>
+  </div>
+
+  <!-- <footer>
+    <a href="./主页.html" class="footer-btn">© 2024 小渔车的基地</a>
+  </footer> -->
+
+</body>
+<script>
+  const lightText = document.getElementById('light-text')
+  document.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+    lightText.style.top = `${y}px`;
+    lightText.style.left = `${x}px`;
+  });
+</script>
+
+</html>

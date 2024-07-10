@@ -1,0 +1,174 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 25px;
+  font-family: '楷体';
+}
+body {
+  height: 100vh;
+  background-image: url(../Pictures/个人中心.jpg);
+  backdrop-filter: brightness(0.5); /*将背景调暗*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+ 
+  /* z-index: -1; */
+}
+input {
+  border-radius: 10px;
+}
+p{
+  color: white;
+}
+#left{
+  border: white solid;
+  grid-column: 2/6;
+  color: white;
+  margin: 10px;
+  width: 100%;
+  height:80vh;
+  display: flex;
+  flex-direction: column;
+}
+#left p{
+  padding: 1em;
+  text-decoration: underline;
+}
+.head img{
+  width: 200px;
+  height:200px;
+  border-radius: 200px;
+ position: absolute;
+ right:60%;
+ top:5em;
+}
+#contanier {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+
+#right{
+  margin: 1em;
+   grid-column: 7/11;
+}
+h2 {
+  grid-row: 1;
+  grid-column: 1/13;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 500 2rem "楷体";
+  box-shadow: black 0px 0px 20px;
+  transition: all 0.3s ease-in-out 0s;
+}
+h2:hover{
+  background-color: rgb(255, 255, 255,0.5);
+  color: black;
+}
+
+#userid {
+  width: 5em;
+}
+#sort-Update-button {
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s ease-in-out 0s;
+}
+#sort-Update-button:hover {
+  background-color: rgb(186, 220, 241);
+  transform: scale(1.1);
+  border-radius: 50px;
+}
+#sort-Delete-button {
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s ease-in-out 0s;
+}
+#sort-Delete-button:hover {
+  background-color: rgb(186, 220, 241);
+  transform: rotate(-0.1turn);
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+}
+#search-button {
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s ease-in-out 0s;
+}
+#search-button:hover {
+  background-color: rgb(186, 220, 241);
+  transform: skew(5deg);
+  border-radius: 50px;
+}
+#main{
+  display: flex;
+  padding:100px;
+}
+a{
+  color: gray;
+  position: relative;
+  padding: 20px 60px;
+  background-color: black;
+  border-radius: 50px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: .5s;
+}
+a span{
+  position: relative;
+  z-index: 1;
+  letter-spacing:.2em;
+}
+a:hover{
+  color: var(--clr);
+  text-shadow: 0 0 15px var(--clr),
+               0 0 40px var(--clr);
+               
+}
+a::before{
+  content: '';
+  position: absolute;
+  top: var(--y);
+  left:var(--x);
+  transform: translate(-50%,-50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(var(--clr),transparent,transparent);
+  opacity: 0;
+  transition: .5s top 0s, left 0s ;
+  -webkit-transition: .5s top 0s, left 0s ;
+  -moz-transition: .5s top 0s, left 0s ;
+  -ms-transition: .5s top 0s, left 0s ;
+  -o-transition: .5s top 0s, left 0s ;
+}
+a:hover::before{
+  opacity: 1;
+}
+a::after{
+  content: '';
+  background-color: rgba(45, 45, 45, .8);
+  position: absolute;
+  inset: 2px;
+  border-radius: 48px;
+  
+}
+.glowing-text{
+   position: absolute;
+   top: 95%;
+   right: 45%;
+}
+
+#displayResults{
+  width:500px;
+  height:400px;
+  overflow: scroll;
+  scrollbar-width: none;
+  position: relative;
+}

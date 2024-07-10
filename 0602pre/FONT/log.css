@@ -1,0 +1,153 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.parallax{
+    width: 100%;
+    height:80vh;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+}
+h1{
+    font-family: "楷体";
+    font-size: 45px;
+    letter-spacing: 10px;/*字体间距*/
+    text-align: center;
+    color: white;
+    font-weight: 500;/*字体粗细*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 42%;
+}
+.rere{
+    font-size: 60px !important;
+    color:white !important;
+    cursor: pointer;   
+    border-radius: 50px;
+    text-decoration: none;
+    padding:10px;
+}
+nav { 
+    background-color: rgb(2, 2, 2);
+    height: 10vh;
+    box-shadow: 0 0 10px black;
+    display: flex;
+    align-items: center;
+}
+footer{
+    background-color: black;
+    height: 10vh;
+}
+.bottom{
+    text-decoration: none;
+    font-family: "楷体";
+    font-size: 45px;
+    letter-spacing: 10px;/*字体间距*/
+    text-align: center;
+    color: white;
+    font-weight: 500;/*字体粗细*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 42%;
+}
+.con{
+    display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+.content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(127, 255, 212,0.8);
+  margin: 1em;
+  width: 40vw;
+  height: 130px;
+  border-radius: 20px;
+  transition: all 0.5s ease-in-out 0s;
+  border: skyblue solid 5px;
+}
+.content:nth-child(odd){
+      background-color: chartreuse;
+}
+.content:hover{
+    width: 70vw;
+    overflow: hidden;
+}
+.content1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 225, 127, 0.8);
+    margin: 1em;
+    width: 40vw;
+    height: 130px;
+    border-radius: 10px;
+    border: rgb(135, 138, 235) solid 5px;
+    transition: all 0.5s ease-in-out 0s;
+  }
+  .content1:nth-child(odd){
+        background-color: rgb(145, 218, 233);
+  }
+  .content1:hover{
+      width: 70vw;
+      overflow: hidden;
+  }
+  .content2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(127, 242, 255, 0.8);
+    margin: 1em;
+    width: 40vw;
+    height: 130px;
+    border-radius: 10px;
+    border: rgb(145, 135, 235) solid 5px;
+    transition: all 0.5s ease-in-out 0s;
+  }
+  .content2:nth-child(odd){
+        background-color: rgb(237, 128, 211);
+  }
+  .content2:hover{
+      width: 70vw;
+      overflow: hidden;
+  }
+  .content3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(208, 127, 255, 0.8);
+    margin: 1em;
+    width: 40vw;
+    height: 130px;
+    border-radius: 10px;
+    border: skyblue solid 5px;
+    transition: all 0.5s ease-in-out 0s;
+  }
+  .content3:nth-child(odd){
+        background-color: rgb(240, 255, 145);
+  }
+  .content3:hover{
+      width: 70vw;
+      overflow: hidden;
+  }
+.p1{
+    background-image: url(../Pictures/动漫背景2.jpg);
+}
+.p2{
+    background-image: url(../Pictures/动漫背景3.jpg);
+}
+.p3{
+    background-image: url(../Pictures/动漫背景4.jpg);
+}
+.p4{
+    background-image: url(../Pictures/动漫背景5.jpg);
+}

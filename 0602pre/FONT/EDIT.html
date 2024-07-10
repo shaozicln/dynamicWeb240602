@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDIT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="./EDIT.css">
+    <link rel="stylesheet" href="./return/iconfont.css">
+</head>
+
+<body>
+
+    <div id="con">
+        <nav>
+            <div id="topp">
+                <a href="./main.html" class="iconfont icon-fanhui rere"></a>
+            </div>
+            <h1 id="top">EDIT</h1>
+
+        </nav>
+        <div id="title1">
+            <h3>创建文章</h3>
+            <input type="text" id="title" placeholder="标题">
+            <input type="number" id="categoryId" placeholder="分类ID">
+            <button onclick="createArticle()" id="create-button"><i class=" fa fa-plus "></i></button>
+            <textarea id="content" class="auto-paragraph" placeholder="内容"></textarea>
+        </div>
+        <div id="article">
+            <h3>更新文章</h3>
+            <input type="text" id="titleupdate" placeholder="标题">
+            <input type="number" id="articleIdupdate" placeholder="文章ID">
+            <input type="number" id="categoryIdupdate" placeholder="分类ID">
+            <button onclick="updateArticle()" id="update-button"><i class=" fa fa-file"></i></button>
+            <textarea id="contentupdate" class="auto-paragraph" placeholder="内容"></textarea>
+        </div>
+        <div id="delete">
+            <h3 i>删除文章:</h3>
+            <input type="number" id="articleIddelete" placeholder="文章ID">
+            <button onclick="deleteArticle()" id="delete-button"><i class=" fa fa-trash arr"></i></button>
+        </div>
+        <h1>分类管理</h1>
+        <div id="users">
+
+            <div id="sort-Create">
+                <h3 class="a">创建分类</h3>
+                <input type="text" id="categoryNameCreate" placeholder="分类名称">
+                <input type="text" id="categoryDescriptionCreate" placeholder="分类描述">
+                <button onclick="createCategory()" id="sort-Create-button"><i class=" fa fa-plus "></i></button>
+            </div>
+            <br>
+            <div id="sort-Update">
+                <h3 class="a">更新分类</h3>
+                <input type="number" id="categoryIdUpdate" placeholder="分类ID">
+                <input type="text" id="categoryNameUpdate" placeholder="分类名称">
+                <input type="text" id="categoryDescriptionUpdate" placeholder="分类描述">
+                <button onclick="updateCategory()" id="sort-Update-button"><i class=" fa fa-file"></i></button>
+            </div>
+            <br>
+
+            <div id="sort-Delete">
+                <h3 class="a">删除分类</h3>
+                <input type="number" id="categoryIdDelete" placeholder="分类ID">
+                <button onclick="deleteCategory()" id="sort-Delete-button"><i class=" fa fa-trash"></i></button>
+            </div>
+            <br>
+            <div id="sort-Get">
+                <h3 class="a">分类ID查找</h3>
+                <input type="number" id="getCategoryId" placeholder="分类ID">
+                <button id="categoryGet1" onclick="getCategoryid()"><i class="fas fa-search"></i></button>
+                <h3 class="a">分类名查找</h3>
+                <input type="text" id="getCategoryName" placeholder="分类名">
+                <button id="categoryGet" onclick="getCategoryName()" id="sort-Get-button"><i
+                        class="fas fa-search"></i></button>
+            </div>
+            <br>
+        </div>
+        <div id="categoriesList"></div>
+
+
+        <script src="./EDIT.js"></script>
+    </div>
+    </form>
+</body>
+
+</html>

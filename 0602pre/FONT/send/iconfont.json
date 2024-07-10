@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "27673683",
+      "name": "发送飞机@3x-01",
+      "font_class": "a-fasongfeiji3x-01",
+      "unicode": "e804",
+      "unicode_decimal": 59396
+    }
+  ]
+}

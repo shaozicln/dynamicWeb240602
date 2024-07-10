@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 25px;
+}
+body {
+    background-image: url(../Pictures/myself.background.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    opacity: 0.9;
+    overflow: hidden;
+  }
+#contanier {
+    display: grid;
+    grid-template-rows: 3em auto ;
+    grid-template-columns: repeat(12, 1fr);
+    height: 100vh;
+    gap: 20px;
+  }
+  #navbar {
+    font:500 24px '宋体';
+    border-radius: 30px;
+    padding: 5px 10px;
+    margin: 8px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/3;
+    height: 100%;
+    grid-row: 1;
+    background-color: rgba(208, 122, 165, 0.625);
+    box-shadow: rgba(128, 128, 128, 0.773) 0px 20px 19px;
+}
+a{
+    text-decoration: none;
+  color: rgb(255, 166, 0);
+}
+span{
+    color: aquamarine;
+  }
+
+h1{
+  font-size: 1.5rem;
+  font-family:'加粗中文字体';
+
+}
+  p{
+    font-size: 0.7rem;
+  }
+.head{
+  /* position: absolute;
+    width: 50%;
+   height: 75%;
+   top: 15em;
+   right:10em; */
+   grid-column:5/13 ;
+   overflow:hidden;
+   /* border: 3px solid purple; */
+}
+
+.happy-girl{
+    position: absolute;
+    border-radius: 500px;
+    width:25%;
+    top: 25%;
+    right: 10em;
+    grid-column: 1/4;
+    grid-row: 2;
+    z-index: 1;
+    float: right;
+    box-shadow: gray 5px 5px 5px;
+}
+
+.happy-girl:hover{
+  box-shadow: black 5px 5px 5px;
+  opacity: 0.8;
+  
+}
+.main-card{
+    z-index: 0;
+    /* background-color: rgb(250, 235, 215); */
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 15em;
+   padding: 2em;
+   transform: skewY(4deg);
+}
+
+.backgroud{
+  display: block;
+  grid-column: 1/5;
+  margin: 6em;
+  height:82vh ;
+ 
+}
+.backgroud2{
+  box-shadow: grey 5px 5px 5px;
+  /* position: absolute;
+  top: 10%;
+  right: 65%;
+  height: 100%; */
+  display: block;
+  grid-column: 1/5;
+   border-right: grey solid 3px;
+}
+#head-backgroud{
+    z-index: -1;
+    position: absolute;
+    /* width: 100%; */
+   height: 100%;
+   background-size: cover;
+   }
+.center{
+    color: black;
+    position: absolute;
+    top:30%;
+    width: 15%;
+    right: 75%;
+    text-align:left;
+    font-size: 18px;font-size: x-large;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; ;
+   }

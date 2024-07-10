@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>writeComment-board</title>
+  <link rel="stylesheet" href="./writeComment.css" />
+  <link rel="stylesheet" href="./return/iconfont.css">
+  <link rel="stylesheet" href="./search/iconfont.css">
+  <link rel="stylesheet" href="./send/iconfont.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<body>
+  <img class="body" src="../Pictures/留言板背景.jpg" />
+  <div class="container">
+    <div class="left">
+      <a href="./main.html" id="back" class="iconfont icon-fanhui rere"></a>
+      <div id="top">
+        <h1>留言板</h1>
+      </div>
+      <div id="welcome">
+        <h2>欢迎来自天南海北的你</h2>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="input-container">
+        <input type="text" placeholder="想说什么？让我猜猜~" name="content" id="content" />
+        <button id="ck" type="button">
+          <p class="iconfont icon-a-fasongfeiji3x-01 sendck"></p>
+        </button>
+      </div>
+      <div class="comment">
+        <div class="comment-list">
+          <div class="comment-item">
+            <div class="content">
+              <div class="info">
+                <img src="" alt="头像" width="50" height="50" />
+                <strong class="username"></strong>
+              </div>
+              <span class="createdAt"></span>
+              <div class="comment-content"></div>
+            </div>
+          </div>
+          <div class="rcomment-item">
+            <div class="rcontent">
+              <div class="rinfo">
+                <img src="" alt="头像" width="50" height="50" />
+                <strong class="rusername"></strong>
+              </div>
+              <span class="rcreatedAt"></span>
+              <div class="rcomment-content"></div>
+            </div>
+            <div class="delete-button-container">
+              <button class="delete-button"><i class=" fa fa-trash arr"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./writeComment.js"></script>
+
+</html>

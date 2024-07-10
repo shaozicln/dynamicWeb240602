@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="./article.css" />
+    <link rel="stylesheet" href="./search/iconfont.css" />
+  </head>
+
+  <body>
+    <div class="container" id="container">
+      <nav>
+        <div class="nav-item">
+          <span id="top">
+            <span id="logo"> |</span>
+            <a href="./main.html" id="return">返回</a>
+          </span>
+        </div>
+      </nav>
+      <!-- //头像、权限等级图标、用户名、发布时间、分类Id、写文章数、阅读数、评论数、全文字数统计 -->
+      <div class="message">
+        <span>
+          <img src="" alt="头像" id="author-avatar" />
+          <!-- //这里的两个span标签是纵向排列在作者名后面的，并且加灰 -->
+          <span class="username"> </span>
+        </span>
+      </div>
+
+      <main>
+        <div class="acontent">
+          <img src="../Pictures/文章背景.jpg" id="article-bg" />
+          <p class="CCC"></p>
+        </div>
+      </main>
+
+      <div class="article-message">
+        <span class="articleCount"></span>
+        <span class="viewCount"></span>
+        <span class="categoryName"></span>
+        <span class="commentCount"></span>
+        <span class="createdAt"></span>
+      </div>
+
+      <div class="recommend">
+        <h3>评论区Comment</h3>
+        <span>
+          <input
+            type="text"
+            placeholder="用户查询"
+            name="searchid"
+            id="searchid"
+          />
+          <button id="ck" type="submit" onclick="searchid()">
+            <p class="iconfont icon-sousuo searchck"></p>
+          </button>
+          <input
+            type="text"
+            placeholder="内容查询"
+            name="searchIdea"
+            id="searchIdea"
+          />
+          <button id="ck" type="submit" onclick="searchIdea()">
+            <p class="iconfont icon-sousuo searchck"></p>
+          </button>
+          <div id="results"></div>
+          <br />
+          <br />
+          <input
+            type="text"
+            placeholder="哎呦，不错呦。发条评论吧...- < -"
+            id="createCommentWrite"
+          />
+          <button id="createComment" type="submit">提交</button>
+        </span>
+      </div>
+      <div class="comment">
+        <div class="comment-list">
+          <div class="comment-item">
+            <div class="content">
+              <div class="info">
+                <img src="" alt="头像" width="50" height="50" />
+                <strong class="username"></strong>
+              </div>
+              <span class="createdAt"></span>
+              <div class="comment-content"></div>
+            </div>
+            <div class="delete-button-container"></div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <span> </span>
+      </footer>
+    </div>
+    <script src="./article.js"></script>
+  </body>
+</html>

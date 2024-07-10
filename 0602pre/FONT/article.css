@@ -1,0 +1,317 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+}
+body{
+    /* background-color: rgb(247, 247, 143); */
+    background-image: url(../Pictures/文章1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    font-family: "楷体";
+    background-attachment: fixed;
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+a{
+    color:#000000;
+    text-decoration: none;
+    font-size:37px ;
+}
+
+nav{
+    box-shadow: rgb(0,0,0) 0px 0px 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height:5em;
+    grid-row: 1;
+    margin-bottom:10px;
+}
+footer{
+    box-shadow: rgb(0,0,0) 0px 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:2em;
+    margin-top:10px;
+}
+
+#logo{
+    font-size:50px;
+}
+
+.content {
+    width: 70%;
+    height:100%;
+    margin: 10px;
+    padding: 5px;
+    opacity: 1;
+    animation: messageFadeIn 0.5s ease forwards;
+    background-image: linear-gradient(75deg, rgb(245,230,219),rgb(204,211,243));
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px #00000026;
+    text-shadow: 0px 0px 20px #ffffff;
+    margin: 37px;
+    text-align: left;
+    align-self: flex-start;
+    /* 用户消息靠左 */
+    margin-right: auto;
+    /* 右侧自动边距 */
+}
+img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+h3{
+    font-size:40px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CCC {
+    padding: 45px;
+    height: 700px;
+    width: 80%;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    font-size: 25px;
+    overflow-y: auto;
+    z-index: 2;
+}
+
+.acontent{
+    position: relative;
+    height:auto;
+    width:100%;
+    overflow: auto;
+    flex-direction: column;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#article-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    width: 100%; /* 或者使用 max-width: 100%; 以适应容器宽度 */
+    height: 100%; /* 保持图片的宽高比 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* 图片在背景层 */
+    opacity: 0.22;
+}
+
+.content {
+    height:60%;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    position: relative;
+}
+.info {
+    transform: translateY(-30px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:15px;
+    align-items: center;
+    position: relative;
+    top:10px;
+}
+
+.info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px #000000 solid;
+}
+
+strong {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "仿宋";
+    color:#00000097;
+    width:60px;
+}
+
+.content span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+}
+
+.comment-content {
+    font-size: 25px;
+    margin-top: 30px;
+    margin-bottom:15px;
+    width: 95%;
+    padding: 3px;
+    opacity: 1;
+    animation: messageFadeIn 0.5s ease forwards;
+    text-align: left;
+    align-self: flex-start;
+    /* 用户消息靠左 */
+    margin-right: auto;
+    /* 右侧自动边距 */
+}
+.delete-comment {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.searchck{
+    font-size: 40px !important;
+    color:  rgb(55, 136, 146) !important;
+    cursor: pointer;   
+    border-radius: 50px;
+}
+.home{
+    font-size: 30px !important;
+    color: rgb(12, 49, 26) !important;
+    cursor: pointer;   
+    border-radius: 50px;
+}
+
+
+#results{
+    grid-row: 2;
+    position: absolute;
+    width:270px;
+    height:auto;
+    background-color: rgb(255, 255, 255);
+    top:23.5%;
+    left:24.7%;
+}
+.comment-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    width:80%;
+}
+
+.delete-button{
+    border-radius: 50px;
+    width:70px;
+    height:60px;
+    background-color: rgb(219,247,251);
+    border:black,1px,solid;
+    transition: all 0.3s ease-in-out 0s;
+}
+.delete-button:hover{
+    transform: scale(1.1) ;
+    background-color: rgb(219, 239, 251);
+}
+
+#searchid,#searchIdea{
+    background-color: rgba(255, 255, 255, 0.416);
+    border-radius: 10px;
+    height:40px;
+}
+
+#createCommentWrite{
+    background-color: rgba(255, 255, 255, 0.416);
+    border-radius: 10px;
+    height:50px;
+    width:1200px;
+}
+
+#createComment{
+    transition: all 0.3s ease-in-out 0s;
+}
+
+#createComment:hover{
+    transform: scale(1.1) ;
+    background-color: rgb(219, 239, 251);
+}
+
+#ck{
+    background-color: #72dea800;
+    border-style: none;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+#ck:hover{
+    transform: scale(1.1) ;
+}
+
+
+.comment-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:30px;
+}
+#createComment{
+    border-radius: 50px;
+    width:70px;
+    height:60px;
+    background-color: rgb(219,247,251);
+    border:black,1px,solid;
+}
+
+#author-avatar{
+    border: 2px black solid;
+}
+
+.article-message{
+    margin-right:20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom:60px;
+    gap:20px;
+}
+
+.username{
+    top:0;
+    padding-bottom:5px;
+}
+
+.message{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom:30px;
+}
+
+#results{
+    left:1px;
+    z-index: 3;
+    width:740px;
+    position: relative;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    background-color: #ffffff7d;
+    box-shadow: #00000026 5px 5px 10px;
+    border-radius: 10px;
+}
+
+#size{
+    padding-left:30px;
+    font-size:20px;
+}
+
+#comment{
+    gap:10px;
+}

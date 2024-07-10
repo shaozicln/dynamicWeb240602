@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>文章搜索</title>
+</head>
+<body>
+<input type="text" id="searchTitle" placeholder="输入文章标题进行搜索">
+<button onclick="searchArticles()">搜索</button>
+<div id="searchResults"></div>
+
+<script>
+  function searchArticles() {
+    var title = document.getElementById('searchTitle').value;
+    fetch('/search?title=' + encodeURIComponent(title))
+            .then(response => response.json())
+            .then(data => {
+              var resultsDiv = document.getElementById('searchResults');
+              resultsDiv.innerHTML = ''; // 清空结果区域
+              data.forEach(article => {
+                var articleDiv = document.createElement('div');
+                articleDiv.textContent = article.title; // 假设你只想显示标题
+                resultsDiv.appendChild(articleDiv);
+              });
+            })
+            .catch(error => console.error('搜索出错:', error));
+  }
+</script>
+</body>
+</html>

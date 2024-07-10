@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 111 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./search/iconfont.css">
+
+</head>
+
+<body>
+    <img class="body" src="../Pictures/主页背景温迪.jpg">
+    <div>
+    </div>
+    <div id="all-con">
+        <div class="toper">
+            <h1 id="top">
+                小渔车の基地
+            </h1>
+        </div>
+        <div class="mid">
+            <nav>
+                <div class="SER">
+                    <div class="search">
+                        <div class="searchtb1">
+                            <div class="iconfont icon-sousuo searchtb"></div>
+                        </div>
+                        <div class="text">
+                         <input type="text" placeholder="Search" value=" " id="input">
+                         <input type="button" value="go" id="go">
+                         <div class="clear"></div>
+                     </div>
+                    </div>
+                </div>
+                <iframe id="iframe"></iframe>
+            </nav>
+            <main>
+                <div id="ser">
+                    <div id="right">
+                        <span class="iconfont icon-shouye-zhihui home"></span>
+                        <span id="addarticle"><a href="./EDIT.html">EDIT |</a></span>
+                        <span id="logo">分类 |</span>
+                        <a href="#fun">Fun</a>
+                        <a href="#game">Game</a>
+                        <a href="#learn">Learn</a>
+                        <a href="#live">Live</a>
+                    </div>
+                    <div id="left">
+                        <span class="serk">
+                            <form id="searchForm">
+                                <input type="text" placeholder="ID查询" name="searchid" id="searchid">
+                                <button id="ck" type="button" onclick="searchArticleIds()"><p class="iconfont icon-sousuo searchck"></p></button>
+                                <input type="text" placeholder="标题查询" name="search" id="search">
+                                <button id="ck" type="button" onclick="searchArticles()"><p class="iconfont icon-sousuo searchck"></p></button>
+                            </form>
+                        </span>   
+                    </div>
+                </div>
+                <div id="main-con" > </div> </div>
+            </main>
+        </div>
+        <div id="results"></div>
+        <footer>
+            <a id="signin" href="./signin.html">登陆/注册</a>
+            <h4>
+                <a href="./writeComment.html">点我写留言</a>
+                <span> © 2024 小渔车的基地 </span>
+                <a href="./main-intro1.html">作者日志</a>
+            </h4>
+            <a id="personal-center" href="./UEDIT.html">个人中心</a>
+        </footer>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
+
+<!-- the first modify -->
