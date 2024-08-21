@@ -40,7 +40,7 @@ function searchArticles() {
 
 function searchArticleIds() {
   var searchValue = document.getElementById("searchid").value;
-  fetch("http://127.0.0.1:8080/search?id=" + encodeURIComponent(searchValue))
+  fetch("http://127.0.0.1:8080/search?id=?id=" + encodeURIComponent(searchValue))
     .then((response) => {
       if (!response.ok) {
         throw new Error("搜索失败，状态码：" + response.status);
@@ -63,11 +63,11 @@ function displayResults(articles) {
     var a = document.createElement("a");
     a.textContent = article.Id + " - " + article.Title;
     a.href = "./article.html";
-    a.addEventListener("click", function (event){
+    a.addEventListener("click", function (event) {
       event.preventDefault(); // 阻止默认行为
       localStorage.setItem("articleId", article.Id); // 保存文章ID到localStorage
       window.location.href = a.href; // 跳转到文章页面
-    } );
+    });
     resultsDiv.appendChild(a);
     resultsDiv.appendChild(document.createElement("br"));
   });
@@ -116,11 +116,11 @@ document.addEventListener("DOMContentLoaded", function () {
             a.href = "./article.html"; // 假设文章链接格式为 /path/to/article/:id
             localStorage.setItem("articleId", article.Id);
             a.textContent = article.Id + " - " + article.Title;; // 显示文章标题
-            a.addEventListener("click", function (event){
-      event.preventDefault(); // 阻止默认行为
-      localStorage.setItem("articleId", article.Id); // 保存文章ID到localStorage
-      window.location.href = a.href; // 跳转到文章页面
-    } );
+            a.addEventListener("click", function (event) {
+              event.preventDefault(); // 阻止默认行为
+              localStorage.setItem("articleId", article.Id); // 保存文章ID到localStorage
+              window.location.href = a.href; // 跳转到文章页面
+            });
             p.appendChild(a);
             adDiv.appendChild(p);
 

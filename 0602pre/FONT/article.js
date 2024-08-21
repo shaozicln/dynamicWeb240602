@@ -4,7 +4,7 @@ if (!userId) {
   alert("请登录！");
   window.location.href = "./signin.html"; // 重定向到登录页面
   throw new Error("用户未登录或userId未定义");
-}
+};
 
 //初始化页面
 document.addEventListener("DOMContentLoaded", function () {
@@ -131,7 +131,7 @@ function createArticleElement(article) {
     `;
   div.innerHTML += newContent;
   return div;
-}
+};
 function displayArticle(article) {
   const container = document.querySelector(".container");
   container.innerHTML = "";
@@ -140,7 +140,7 @@ function displayArticle(article) {
   //监听按钮
   attachCreateCommentListener();
   attachDeleteButtonListener();
-}
+};
 
 //查询评论
 function searchIdea() {
@@ -166,7 +166,7 @@ function searchIdea() {
     .catch((error) => {
       console.error("Error:", error);
     });
-}
+};
 function searchid() {
   var searchValue = document.getElementById("searchid").value;
   // if (!searchValue) {
@@ -190,7 +190,7 @@ function searchid() {
     .catch((error) => {
       console.error("Error:", error);
     });
-}
+};
 function displayResults(comments) {
   var resultsDiv = document.getElementById("results");
   resultsDiv.innerHTML = ""; // 清空旧结果
@@ -201,7 +201,7 @@ function displayResults(comments) {
     a.href = `./article.html#comment-${comment.Id}`;
     resultsDiv.appendChild(a);
   });
-}
+};
 
 //创造评论 监听按钮
 function attachCreateCommentListener() {
@@ -284,7 +284,7 @@ function attachCreateCommentListener() {
         commentLIST.appendChild(newDiv);
       }
     });
-}
+};
 
 //删除评论 监听按钮
 function attachDeleteButtonListener() {
@@ -317,7 +317,7 @@ function attachDeleteButtonListener() {
             console.error("删除评论失败:", error);
             alert("删除评论失败");
           });
-      }
+      };
     });
-  }
-}
+  };
+};
